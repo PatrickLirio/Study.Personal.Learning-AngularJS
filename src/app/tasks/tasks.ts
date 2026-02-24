@@ -22,13 +22,17 @@ export class TasksComponent {
     return this.dummyTasks.filter((task) => task.userId === this.userId);
   }
 
-  onCompleteTask(id: string) {
+  OnCompleteTask(id: string) {
     this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
   }
 
   OnStartAddTask() {
-    console.log(this.name);
+    // console.log(this.name);
     // this.newTask.emit(this.userId);
     this.isAddingTask = true;
+  }
+
+  OnCancelAddTask() {
+    this.isAddingTask = false;
   }
 }
