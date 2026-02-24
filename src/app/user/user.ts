@@ -39,8 +39,8 @@ export class UserComponent {
   // })
 
   onSelectUser() {
-    console.log(this.user.name);
-    console.log(this.user.id);
+    // console.log(this.user.name);
+    // console.log(this.user.id);
     this.select.emit(this.user.id);
   }
 }
