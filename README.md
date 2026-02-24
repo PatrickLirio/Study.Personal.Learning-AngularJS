@@ -1,59 +1,129 @@
-# FirstAngularApp
+# Study.Personal.Learning-AngularJS
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+This is a personal Angular project for learning and development purposes.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📋 Prerequisites
+
+Before running this project, make sure you have the following installed:
+
+- **Node.js** (Recommended: LTS version)  
+  Download: https://nodejs.org/
+- **npm** (comes with Node.js)
+- **Angular CLI**
+
+Install Angular CLI globally (if not yet installed):
+
+```bash
+npm install -g @angular/cli
+```
+
+Verify installations:
+
+```bash
+node -v
+npm -v
+ng version
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Study.Personal.Learning-AngularJS.git
+```
+
+### 2️⃣ Navigate to Project Folder
+
+```bash
+cd Study.Personal.Learning-AngularJS
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+This will install all required packages listed in `package.json`.
+
+---
+
+## ▶️ Run the Project (Development Server)
+
+Start the Angular development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+or
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+After running, open your browser and go to:
 
-```bash
-ng generate --help
+```
+http://localhost:4200/
 ```
 
-## Building
+The app will automatically reload whenever you modify source files.
 
-To build the project run:
+---
+
+## 🏗️ Build for Production
+
+To create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+For optimized production build:
 
 ```bash
-ng test
+ng build --configuration production
 ```
 
-## Running end-to-end tests
+The build output will be generated inside the `dist/` folder.
 
-For end-to-end (e2e) testing, run:
+---
+
+## 🧹 Clean Installation (If You Encounter Errors)
+
+If you experience dependency or build issues:
 
 ```bash
-ng e2e
+rm -rf node_modules package-lock.json
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Then run again:
 
-## Additional Resources
+```bash
+ng serve
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 📁 Project Structure Overview
+
+```
+src/            → Application source code
+dist/           → Production build output
+node_modules/   → Installed dependencies
+angular.json    → Angular configuration
+package.json    → Project dependencies and scripts
+```
+
+---
+
+## 👨‍💻 Author
+
+Patrick Lirio
