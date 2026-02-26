@@ -3,6 +3,7 @@ import { TaskComponent } from './task/task';
 import { DUMMY_TASKS } from './dummy-tasks';
 import { NewTaskComponent } from './new-task/new-task';
 import { type NewTaskData } from './task/task.model';
+import { TasksServices } from './tasks.services';
 
 @Component({
   selector: 'app-tasks',
@@ -19,13 +20,17 @@ export class TasksComponent {
   isAddingTask: boolean = false;
   @Output() newTask = new EventEmitter();
 
+  // private tasksService = new TasksServices();
+  constructor(private tasksService: TasksServices) {}
+
   get selectedUserTask() {
-    return this.dummyTasks.filter((task) => task.userId === this.userId);
+    return this.tasksService.getUserTasks(this.userId);
   }
 
-  OnCompleteTask(id: string) {
-    this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
-  }
+  // OnCompleteTask(id: string) {
+  //   // console.log('clicked ' + id);
+  //   return this.tasksService.removeTask(id);
+  // }
 
   OnStartAddTask() {
     // console.log(this.name);
@@ -33,19 +38,13 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  OnCancelAddTask() {
+  OnCloseAddTask() {
     this.isAddingTask = false;
   }
 
-  onAddTask(taskData: NewTaskData) {
-    // console.log(taskData.title, taskData.summary, taskData.date);
-    this.dummyTasks.unshift({
-      id: new Date().getTime().toString(),
-      userId: this.userId,
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.date,
-    });
-    this.isAddingTask = false;
-  }
+  // onAddTask(taskData: NewTaskData) {
+  //   // console.log(taskData.title, taskData.summary, taskData.date);
+
+  //   this.isAddingTask = false;
+  // }
 }
